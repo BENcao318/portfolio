@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Cursor from "../components/Cursor";
 import Header from "../components/Header";
 import ProjectResume from "../components/ProjectResume";
 import Socials from "../components/Socials";
@@ -30,61 +29,34 @@ const Resume = () => {
           </Button>
         </div>
       )}
-
-      <Cursor />
-      <div className="container mx-auto cursor-none mb-10">
+      
+      <div className="container mx-auto mb-10">
         <Header isBlog />
         {mount && (
-          <div className="mt-10 w-full flex flex-col items-center">
+          <div className="flex flex-col items-center w-full mt-7">
             <div
               className={`w-full ${
                 mount && theme.theme === "dark" ? "bg-slate-800" : "bg-gray-50"
-              } max-w-4xl p-20 mob:p-5 desktop:p-20 rounded-lg shadow-sm`}
+              } max-w-4xl p-20 mob:p-7 desktop:p-20 rounded-lg shadow-sm`}
             >
               <h1 className="text-3xl font-bold">{name}</h1>
-              <h2 className="text-xl mt-5">{resume.tagline}</h2>
-              <h2 className="w-4/5 text-xl mt-5 opacity-50">
+              <h2 className="mt-5 text-xl">{resume.tagline}</h2>
+              <h2 className="w-4/5 mt-5 text-xl opacity-70">
                 {resume.description}
               </h2>
               <div className="mt-2">
                 <Socials />
               </div>
-              <div className="mt-5">
-                <h1 className="text-2xl font-bold">Experience</h1>
-
-                {resume.experiences.map(
-                  ({ id, dates, type, position, bullets }) => (
-                    <ProjectResume
-                      key={id}
-                      dates={dates}
-                      type={type}
-                      position={position}
-                      bullets={bullets}
-                    ></ProjectResume>
-                  )
-                )}
-              </div>
-              <div className="mt-5">
-                <h1 className="text-2xl font-bold">Education</h1>
-                <div className="mt-2">
-                  <h2 className="text-lg">{resume.education.universityName}</h2>
-                  <h3 className="text-sm opacity-75">
-                    {resume.education.universityDate}
-                  </h3>
-                  <p className="text-sm mt-2 opacity-50">
-                    {resume.education.universityPara}
-                  </p>
-                </div>
-              </div>
-              <div className="mt-5">
+              
+              <div className="mt-7">
                 <h1 className="text-2xl font-bold">Skills</h1>
-                <div className="flex mob:flex-col desktop:flex-row justify-between">
+                <div className="flex justify-between mob:flex-col desktop:flex-row">
                   {resume.languages && (
                     <div className="mt-2 mob:mt-5">
                       <h2 className="text-lg">Languages</h2>
                       <ul className="list-disc">
                         {resume.languages.map((language, index) => (
-                          <li key={index} className="ml-5 py-2">
+                          <li key={index} className="py-2 ml-5">
                             {language}
                           </li>
                         ))}
@@ -97,7 +69,7 @@ const Resume = () => {
                       <h2 className="text-lg">Frameworks</h2>
                       <ul className="list-disc">
                         {resume.frameworks.map((framework, index) => (
-                          <li key={index} className="ml-5 py-2">
+                          <li key={index} className="py-2 ml-5">
                             {framework}
                           </li>
                         ))}
@@ -105,19 +77,71 @@ const Resume = () => {
                     </div>
                   )}
 
-                  {resume.others && (
+                  {resume.databases && (
                     <div className="mt-2 mob:mt-5">
-                      <h2 className="text-lg">Others</h2>
+                      <h2 className="text-lg">Databases</h2>
                       <ul className="list-disc">
-                        {resume.others.map((other, index) => (
-                          <li key={index} className="ml-5 py-2">
-                            {other}
+                        {resume.databases.map((database, index) => (
+                          <li key={index} className="py-2 ml-5">
+                            {database}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {resume.testing && (
+                    <div className="mt-2 mob:mt-5">
+                      <h2 className="text-lg">Testing</h2>
+                      <ul className="list-disc">
+                        {resume.testing.map((testing, index) => (
+                          <li key={index} className="py-2 ml-5">
+                            {testing}
                           </li>
                         ))}
                       </ul>
                     </div>
                   )}
                 </div>
+
+                <div className="mt-5">
+                  <h1 className="text-2xl font-bold">Education</h1>
+                  <div className="mt-2">
+                    <h2 className="text-lg">{resume.education.bootcampName}</h2>
+                    <h3 className="text-sm opacity-75">
+                      {resume.education.bootcampDate}
+                    </h3>
+                    <p className="mt-2 text-sm opacity-70">
+                      {resume.education.bootcampPara}
+                    </p>
+                  </div>
+                  <div className="mt-2">
+                    <h2 className="text-lg">{resume.education.universityName}</h2>
+                    <h3 className="text-sm opacity-75">
+                      {resume.education.universityDate}
+                    </h3>
+                    <p className="mt-2 text-sm opacity-70">
+                      {resume.education.universityPara}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5">
+                  <h1 className="text-2xl font-bold">Experience</h1>
+                  {resume.experiences.map(
+                    ({ id, dates, type, position, bullets }) => (
+                      <ProjectResume
+                        key={id}
+                        dates={dates}
+                        type={type}
+                        position={position}
+                        bullets={bullets}
+                      ></ProjectResume>
+                    )
+                  )}
+                </div>
+
+                
               </div>
             </div>
           </div>

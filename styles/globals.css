@@ -5,11 +5,7 @@
 @import "./markdown.css";
 
 * {
-  font-family: "Hind";
-}
-
-html{
-  @apply cursor-none
+  font-family: "sans-serif";
 }
 
 body {
@@ -79,3 +75,4 @@ body {
   background: inherit;
   border-radius: inherit;
 }
+

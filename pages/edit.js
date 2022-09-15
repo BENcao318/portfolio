@@ -6,7 +6,6 @@ import { useTheme } from "next-themes";
 
 // Data
 import yourData from "../data/portfolio.json";
-import Cursor from "../components/Cursor";
 
 const Edit = () => {
   // states
@@ -149,7 +148,6 @@ const Edit = () => {
   return (
     <div className="container mx-auto">
       <Header></Header>
-      <Cursor />
       <div className="mt-10">
         <div
           className={`z-10 sticky top-12 ${
@@ -212,12 +210,12 @@ const Edit = () => {
               <input
                 value={data.name}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-sx opacity-50">
+            <div className="flex items-center mt-5">
+              <label className="w-1/5 opacity-50 text-sx">
                 Header Tagline One
               </label>
               <input
@@ -225,11 +223,11 @@ const Edit = () => {
                 onChange={(e) =>
                   setData({ ...data, headerTaglineOne: e.target.value })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">
                 Header Tagline Two
               </label>
@@ -238,11 +236,11 @@ const Edit = () => {
                 onChange={(e) =>
                   setData({ ...data, headerTaglineTwo: e.target.value })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">
                 Header Tagline Three
               </label>
@@ -251,11 +249,11 @@ const Edit = () => {
                 onChange={(e) =>
                   setData({ ...data, headerTaglineThree: e.target.value })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">
                 Header Tagline Four
               </label>
@@ -264,13 +262,13 @@ const Edit = () => {
                 onChange={(e) =>
                   setData({ ...data, headerTaglineFour: e.target.value })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">Blog</label>
-              <div className="w-4/5 ml-10 flex items-center">
+              <div className="flex items-center w-4/5 ml-10">
                 <Button
                   onClick={() => setData({ ...data, showBlog: true })}
                   type={data.showBlog && "primary"}
@@ -287,9 +285,9 @@ const Edit = () => {
                 </Button>
               </div>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">Dark Mode</label>
-              <div className="w-4/5 ml-10 flex items-center">
+              <div className="flex items-center w-4/5 ml-10">
                 <Button
                   onClick={() => setData({ ...data, darkMode: true })}
                   type={data.darkMode && "primary"}
@@ -306,9 +304,9 @@ const Edit = () => {
                 </Button>
               </div>
             </div>
-            <div className="mt-5 flex items-center">
+            <div className="flex items-center mt-5">
               <label className="w-1/5 text-lg opacity-50">Show Resume</label>
-              <div className="w-4/5 ml-10 flex items-center">
+              <div className="flex items-center w-4/5 ml-10">
                 <Button
                   onClick={() => setData({ ...data, showResume: true })}
                   type={data.showResume && "primary"}
@@ -353,7 +351,7 @@ const Edit = () => {
                           title: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -369,7 +367,7 @@ const Edit = () => {
                           description: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -385,7 +383,7 @@ const Edit = () => {
                           imageSrc: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -399,7 +397,7 @@ const Edit = () => {
                           url: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -440,7 +438,7 @@ const Edit = () => {
                           title: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -456,7 +454,7 @@ const Edit = () => {
                           description: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                     ></textarea>
                   </div>
                   <hr className="my-10"></hr>
@@ -474,7 +472,7 @@ const Edit = () => {
           <div className="mt-10">
             <h1 className="text-2xl">About</h1>
             <textarea
-              className="w-full h-96 mt-10 p-2 rounded-md shadow-md border"
+              className="w-full p-2 mt-10 border rounded-md shadow-md h-96"
               value={data.aboutpara}
               onChange={(e) => setData({ ...data, aboutpara: e.target.value })}
             ></textarea>
@@ -504,7 +502,7 @@ const Edit = () => {
                           title: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -518,7 +516,7 @@ const Edit = () => {
                           link: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     />
                   </div>
@@ -536,8 +534,8 @@ const Edit = () => {
         {currentTabs === "RESUME" && (
           <div className="mt-10">
             <h1>Main</h1>
-            <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-sx opacity-50">Tagline</label>
+            <div className="flex items-center mt-5">
+              <label className="w-1/5 opacity-50 text-sx">Tagline</label>
               <input
                 value={data.resume.tagline}
                 onChange={(e) =>
@@ -546,7 +544,7 @@ const Edit = () => {
                     resume: { ...data.resume, tagline: e.target.value },
                   })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                 type="text"
               ></input>
             </div>
@@ -560,7 +558,7 @@ const Edit = () => {
                     resume: { ...data.resume, description: e.target.value },
                   })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
               ></textarea>
             </div>
             <hr className="my-10"></hr>
@@ -589,7 +587,7 @@ const Edit = () => {
                           dates: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -603,7 +601,7 @@ const Edit = () => {
                           type: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
@@ -617,13 +615,13 @@ const Edit = () => {
                           position: e.target.value,
                         })
                       }
-                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                       type="text"
                     ></input>
                   </div>
-                  <div className="mt-2 flex">
+                  <div className="flex mt-2">
                     <label className="w-1/5 text-lg opacity-50">Bullets</label>
-                    <div className="w-4/5 ml-10 flex flex-col">
+                    <div className="flex flex-col w-4/5 ml-10">
                       <input
                         value={experiences.bullets}
                         onChange={(e) =>
@@ -633,7 +631,7 @@ const Edit = () => {
                           })
                         }
                         placeholder="Bullet One, Bullet Two, Bullet Three"
-                        className="p-2 rounded-md shadow-lg border-2"
+                        className="p-2 border-2 rounded-md shadow-lg"
                         type="text"
                       ></input>
                     </div>
@@ -665,7 +663,7 @@ const Edit = () => {
                       },
                     })
                   }
-                  className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                  className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                   type="text"
                 ></input>
               </div>
@@ -685,7 +683,7 @@ const Edit = () => {
                       },
                     })
                   }
-                  className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                  className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                   type="text"
                 ></input>
               </div>
@@ -705,7 +703,7 @@ const Edit = () => {
                       },
                     })
                   }
-                  className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                  className="w-4/5 p-2 ml-10 border-2 rounded-md shadow-lg"
                   type="text"
                 ></input>
               </div>
@@ -714,7 +712,7 @@ const Edit = () => {
             <div className="mt-10">
               <div className="flex">
                 <label className="w-1/5 text-lg opacity-50">Languages</label>
-                <div className="w-4/5 ml-10 flex flex-col">
+                <div className="flex flex-col w-4/5 ml-10">
                   {data.resume.languages.map((language, index) => (
                     <div key={index} className="flex">
                       <input
@@ -732,7 +730,7 @@ const Edit = () => {
                             },
                           });
                         }}
-                        className="w-full p-2 rounded-md shadow-lg border-2"
+                        className="w-full p-2 border-2 rounded-md shadow-lg"
                         type="text"
                       ></input>
                       <Button
@@ -772,7 +770,7 @@ const Edit = () => {
               <hr className="my-10"></hr>
               <div className="flex">
                 <label className="w-1/5 text-lg opacity-50">Frameworks</label>
-                <div className="w-4/5 ml-10 flex flex-col">
+                <div className="flex flex-col w-4/5 ml-10">
                   {data.resume.frameworks.map((framework, index) => (
                     <div key={index} className="flex">
                       <input
@@ -790,7 +788,7 @@ const Edit = () => {
                             },
                           });
                         }}
-                        className="w-full p-2 rounded-md shadow-lg border-2"
+                        className="w-full p-2 border-2 rounded-md shadow-lg"
                         type="text"
                       ></input>
                       <Button
@@ -830,7 +828,7 @@ const Edit = () => {
               <hr className="my-10"></hr>
               <div className="flex">
                 <label className="w-1/5 text-lg opacity-50">Others</label>
-                <div className="w-4/5 ml-10 flex flex-col">
+                <div className="flex flex-col w-4/5 ml-10">
                   {data.resume.others.map((other, index) => (
                     <div key={index} className="flex">
                       <input
@@ -848,7 +846,7 @@ const Edit = () => {
                             },
                           });
                         }}
-                        className="w-full p-2 rounded-md shadow-lg border-2"
+                        className="w-full p-2 border-2 rounded-md shadow-lg"
                         type="text"
                       ></input>
                       <Button
